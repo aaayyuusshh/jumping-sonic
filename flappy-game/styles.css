@@ -1,0 +1,23 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.gameScreen {
+    height: 500px;
+    width: 400px;
+    border: 1px solid black;
+    /* this centers the div in the browser */
+    margin: auto; 
+    margin-top: 20px;
+}
+
+.obstacle {
+    width: 50px;
+    height: 500px;
+    background-color: black;
+    position: relative;
+    /* this moves the obstacle to the very right of the game screen */
+    /* because tubes are coming from the right */
+    left: 400px;
+}
