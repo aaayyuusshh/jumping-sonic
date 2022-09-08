@@ -31,7 +31,7 @@
     background-color: white;;
     position: relative;
     left: 400px;
-    top: -350px;
+    top: -150px;
     -webkit-animation: rightToLeftMove 2s infinite linear;
 }
 
