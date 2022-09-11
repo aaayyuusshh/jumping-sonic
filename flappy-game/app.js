@@ -38,13 +38,17 @@ setInterval(function() {
     }
 }, 10);
 
-function jump() {
+/**
+ * Jumping logic of the game object
+ */
+function simulateJumping() {
     let intervalCount = 0;
     isObjectJumping = 1;
 
     let jumpTime = setInterval(function(){
-        
         let objectTopProperty = parseInt(window.getComputedStyle(object).getPropertyValue("top"));
+        //first condition: prevents game object from jumping away (above) from the game screen
+        //second condition: after reaching 15 interval counts, don't jump or drop (just stall) to make game expereience a bit smoother?
         if(objectTopProperty >= 5 && intervalCount <= 15){
             object.style.top = (objectTopProperty - 5) + "px";
         }
