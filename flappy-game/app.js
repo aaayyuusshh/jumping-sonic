@@ -1,8 +1,9 @@
-/* change the position of the hole in the obstacle after every animation */
 let obstacle = document.querySelector(".obstacle");
 let hole = document.querySelector(".pass");
 let object = document.querySelector(".object");
+let isObjectJumping = 0;
 
+/* change the position of the hole in the obstacle after every animation */
 obstacle.addEventListener("animationiteration", () => {
     //generate a number between 150 & 500
     let random = -1 * randomNumberGenerator(500, 150);
@@ -27,7 +28,31 @@ setInterval(function() {
     // learnt that you cannot use .style to fetch a value, it's only to set which is why the below doesn't work
     // object.style.top = (object.style.top + 3) + "px";
 
-    let objectTopProperty = window.getComputedStyle(object).getPropertyValue("top");
-    object.style.top = (parseInt(objectTopProperty) + 3) + "px";
-
+    let objectTopProperty = parseInt(window.getComputedStyle(object).getPropertyValue("top"));
+    if(objectTopProperty>480){
+        alert("Game Over!");
+    }
+    //the ball falls down only if we're not jumping
+    if(isObjectJumping == false){
+        object.style.top = (objectTopProperty + 3) + "px";
+    }
 }, 10);
+
+function jump() {
+    let intervalCount = 0;
+    isObjectJumping = 1;
+
+    let jumpTime = setInterval(function(){
+        
+        let objectTopProperty = parseInt(window.getComputedStyle(object).getPropertyValue("top"));
+        if(objectTopProperty >= 5 && intervalCount <= 15){
+            object.style.top = (objectTopProperty - 5) + "px";
+        }
+        if(intervalCount > 20){
+            clearInterval(jumpTime);
+            isObjectJumping = 0;
+            intervalCount = 0;
+        }
+        intervalCount ++;
+    }, 10);
+}
