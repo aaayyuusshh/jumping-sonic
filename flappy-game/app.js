@@ -1,3 +1,4 @@
+/* Global Variables */
 let obstacle = document.querySelector(".obstacle");
 let hole = document.querySelector(".pass");
 let object = document.querySelector(".object");
@@ -29,7 +30,12 @@ setInterval(function() {
     // object.style.top = (object.style.top + 3) + "px";
 
     let objectTopProperty = parseInt(window.getComputedStyle(object).getPropertyValue("top"));
-    if(objectTopProperty>480){
+    let holeTopProperty = parseInt(window.getComputedStyle(hole).getPropertyValue("top"));
+    let objectTopInNegative = -(500 - objectTopProperty);
+    let obstacleLeftProperty = parseInt(window.getComputedStyle(obstacle).getPropertyValue("left"));
+
+    //out of bounds detection of game object || collision detection between game object & obstacle
+    if(objectTopProperty>=480 || (obstacleLeftProperty<=20 && obstacleLeftProperty>-50 && (objectTopInNegative<holeTopProperty || objectTopInNegative>holeTopProperty+(150-20)))){
         alert("Game Over!");
     }
     //the ball falls down only if we're not jumping
@@ -39,7 +45,7 @@ setInterval(function() {
 }, 10);
 
 /**
- * Jumping logic of the game object
+ * jumping logic of the game object
  */
 function simulateJumping() {
     let intervalCount = 0;
