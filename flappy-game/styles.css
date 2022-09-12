@@ -1,0 +1,54 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.gameScreen {
+    height: 500px;
+    width: 400px;
+    border: 1px solid black;
+    /* this centers the div in the browser */
+    margin: auto;
+    margin-top: 20px;
+    overflow: hidden;
+    background-color: rgb(0, 225, 255);
+    position: relative;
+}
+
+.obstacle {
+    width: 50px;
+    height: 500px;
+    background-color: black;
+    position: relative;
+    /* this moves the obstacle to the very right of the game screen */
+    /* because tubes are coming from the right */
+    left: 400px;
+    -webkit-animation: rightToLeftMove 2s infinite linear;
+}
+
+.pass {
+    width: 50px;
+    height: 150px;
+    background-color: rgb(0, 225, 255);
+    position: relative;
+    left: 400px;
+    top: -300px;
+    -webkit-animation: rightToLeftMove 2s infinite linear;
+}
+
+.object {
+    width: 20px;
+    height: 20px;
+    /* border: 2px solid black; */
+    background-color: rgb(187, 255, 0);
+    position: absolute;
+    top: 50px;
+}
+
+/* animation for the black obstacle: moving it from right to left infinitely */ 
+@-webkit-keyframes rightToLeftMove {
+    /* at the start of the animation you want the obstacle to be far right side */
+    0%{left:400px}
+    /* at the end of the animation you want the obstacle to be far left side(out of sight) */
+    100%{left:-50px}
+}
