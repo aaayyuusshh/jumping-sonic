@@ -36,15 +36,19 @@ setInterval(function() {
     let objectTopInNegative = -(500 - objectTopProperty);
     let obstacleLeftProperty = parseInt(window.getComputedStyle(obstacle).getPropertyValue("left"));
 
-    //out of bounds detection of game object || collision detection between game object & obstacle
-    if(objectTopProperty>=480 || (obstacleLeftProperty<=20 && obstacleLeftProperty>-50 && (objectTopInNegative<holeTopProperty || objectTopInNegative>holeTopProperty+(150-20)))){
-        alert("Score:" + totalScore);
-        totalScore = 0;
-    }
     //the ball falls down only if we're not jumping
     if(isObjectJumping == false){
         object.style.top = (objectTopProperty + 3) + "px";
     }
+
+    //out of bounds detection of game object || collision detection between game object & obstacle
+    if(objectTopProperty>=480 || (obstacleLeftProperty<=20 && obstacleLeftProperty>-50 && (objectTopInNegative<holeTopProperty || objectTopInNegative>holeTopProperty+(150-20)))){
+        let scoreToDisplay = totalScore;
+        alert("Score:" + totalScore);
+        object.style.top = 100 + "px";   
+        totalScore = 0;
+    }
+    
 }, 10);
 
 /**
