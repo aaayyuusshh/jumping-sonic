@@ -3,12 +3,14 @@ let obstacle = document.querySelector(".obstacle");
 let hole = document.querySelector(".pass");
 let object = document.querySelector(".object");
 let isObjectJumping = 0;
+let totalScore = 0;
 
 /* change the position of the hole in the obstacle after every animation */
 obstacle.addEventListener("animationiteration", () => {
     //generate a number between 150 & 500
     let random = -1 * randomNumberGenerator(500, 150);
     hole.style.top = random + 'px';
+    totalScore++;
 });
 
 /**
@@ -36,7 +38,8 @@ setInterval(function() {
 
     //out of bounds detection of game object || collision detection between game object & obstacle
     if(objectTopProperty>=480 || (obstacleLeftProperty<=20 && obstacleLeftProperty>-50 && (objectTopInNegative<holeTopProperty || objectTopInNegative>holeTopProperty+(150-20)))){
-        alert("Game Over!");
+        alert("Score:" + totalScore);
+        totalScore = 0;
     }
     //the ball falls down only if we're not jumping
     if(isObjectJumping == false){
