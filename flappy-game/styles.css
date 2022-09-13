@@ -42,7 +42,7 @@
     width: 20px;
     height: 20px;
     /* border: 2px solid black; */
-    background-color: rgb(187, 255, 0);
+    /* background-color: rgb(187, 255, 0); */
     position: absolute;
     top: 50px;
     z-index: 2;  
