@@ -55,6 +55,11 @@
     left: 345px;
 }
 
+.sonicImage {
+    max-width: 100%;
+    max-height: 100%;
+}
+
 /* animation for the black obstacle: moving it from right to left infinitely */ 
 @-webkit-keyframes rightToLeftMove {
     /* at the start of the animation you want the obstacle to be far right side */
