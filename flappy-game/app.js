@@ -8,6 +8,9 @@ let totalScore = 0;
 let gameOverSound = new Howl({
     src: ['gameOver.mp3']
 });
+let successSound = new Howl({
+    src: ['success.mp3']
+});
 
 //restarts all animations on the page 
 const restartAnimations = () => {
@@ -23,6 +26,7 @@ obstacle.addEventListener("animationiteration", () => {
     let random = -1 * randomNumberGenerator(419, 150);
     hole.style.top = random + 'px';
     totalScore++;
+    successSound.play();
 });
 
 /**
