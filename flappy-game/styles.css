@@ -60,6 +60,36 @@
     max-height: 100%;
 }
 
+.cloudImageWrapper {
+    /* border: 1px solid black; */
+    width: 390px;
+    height: 60px;
+    position: absolute;
+    bottom:420px;
+    left: 10px;
+    
+    /* display: flex; */
+}
+
+.cloudImage{
+    position: relative;
+    bottom: 18px; 
+    padding-right: 30px;
+}
+
+.titleDiv {
+    border: 1px dashed black;
+    width: 230px;
+    height: 20px;
+    margin: auto;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.titleText {
+    font-weight: 800;
+    font-size: 20px;
+}
 /* animation for the black obstacle: moving it from right to left infinitely */ 
 @-webkit-keyframes rightToLeftMove {
     /* at the start of the animation you want the obstacle to be far right side */
