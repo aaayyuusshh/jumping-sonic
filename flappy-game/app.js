@@ -7,8 +7,8 @@ let totalScore = 0;
 
 /* change the position of the hole in the obstacle after every animation */
 obstacle.addEventListener("animationiteration", () => {
-    //generate a number between 150 & 500
-    let random = -1 * randomNumberGenerator(500, 150);
+    //generate a number between 150 & 419 - 419 so there is no hole where the clouds are
+    let random = -1 * randomNumberGenerator(419, 150);
     hole.style.top = random + 'px';
     totalScore++;
 });
@@ -51,7 +51,7 @@ setInterval(function() {
     
 }, 10);
 
-/**
+/** 
  * jumping logic of the game object
  */
 function simulateJumping() {
