@@ -5,12 +5,28 @@ let object = document.querySelector(".object");
 let isObjectJumping = 0;
 let totalScore = 0;
 
+let gameOverSound = new Howl({
+    src: ['gameOver.mp3']
+});
+let successSound = new Howl({
+    src: ['success.mp3']
+});
+
+//restarts all animations on the page 
+const restartAnimations = () => {
+    document.getAnimations().forEach((animation) => {
+      animation.cancel();
+      animation.play();
+    });
+  };
+
 /* change the position of the hole in the obstacle after every animation */
 obstacle.addEventListener("animationiteration", () => {
     //generate a number between 150 & 419 - 419 so there is no hole where the clouds are
     let random = -1 * randomNumberGenerator(419, 150);
     hole.style.top = random + 'px';
     totalScore++;
+    successSound.play();
 });
 
 /**
@@ -43,12 +59,13 @@ setInterval(function() {
 
     //out of bounds detection of game object || collision detection between game object & obstacle
     if(objectTopProperty>=480 || (obstacleLeftProperty<=20 && obstacleLeftProperty>-50 && (objectTopInNegative<holeTopProperty || objectTopInNegative>holeTopProperty+(150-20)))){
+        gameOverSound.play();
         totalScore != 0 ? totalScore = totalScore - 1 : totalScore = totalScore;
         alert("Score:" + totalScore);
-        object.style.top = 100 + "px";   
+        object.style.top = 100 + "px"; 
         totalScore = 0;
+        restartAnimations();
     }
-    
 }, 10);
 
 /** 
