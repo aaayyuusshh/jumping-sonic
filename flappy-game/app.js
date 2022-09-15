@@ -60,8 +60,8 @@ setInterval(function() {
     //out of bounds detection of game object || collision detection between game object & obstacle
     if(objectTopProperty>=480 || (obstacleLeftProperty<=20 && obstacleLeftProperty>-50 && (objectTopInNegative<holeTopProperty || objectTopInNegative>holeTopProperty+(150-20)))){
         gameOverSound.play();
-        totalScore != 0 ? totalScore = totalScore - 1 : totalScore = totalScore;
-        alert("Score:" + totalScore);
+        // totalScore != 0 ? totalScore = totalScore - 1 : totalScore = totalScore;
+        alert("Game Over!\nScore:" + totalScore);
         object.style.top = 100 + "px"; 
         totalScore = 0;
         restartAnimations();
