@@ -16,6 +16,8 @@ ________________________________________________________________________________
 1. ```cd``` to your favourite directory & clone the repo
 ```git clone https://github.com/aaayyuusshh/2d-browser-games.git```
     - For example: If I want to download the repository in my Desktop, I will do ```cd Desktop``` then the ```git clone``` command
+ ![carbon](https://user-images.githubusercontent.com/80851741/191406201-4ad01ae3-8dd1-4d93-9f3e-cad0c53f9daf.png)
+
 2. Navigate to location of repo & click on repo folder ```2d-browser-games```
 3. Go to the folder ```flappy-game``` & click on file ```index.html```
 4. At this point, your default browser will open with the game running.
