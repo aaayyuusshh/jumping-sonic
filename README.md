@@ -1,9 +1,11 @@
 ![JUMPING_SONIC](https://user-images.githubusercontent.com/80851741/190240752-0368fef7-6e81-41c8-9407-757413e0a145.png)
 
-A retro 2D game where you help your falling character(Sonic) jump to dodge obstacles and pass through the hole.
+A retro 2D game where you help falling Sonic dodge obstacles and pass through the hole 💙
 
 ______________________________________________________________________________________________________________________
-![jumping-sonic](https://user-images.githubusercontent.com/80851741/190230243-85691d82-55c5-48a3-8275-b572f8be1f91.png)
+
+![ScreenRecording2024-06-08at2 43 56AM-ezgif com-video-to-gif-converter (1)](https://github.com/aaayyuusshh/2d-browser-games/assets/80851741/1c98e404-6354-4d5f-aca3-dc2bfbda19d8)
+
 
 
 ## Game Overview
